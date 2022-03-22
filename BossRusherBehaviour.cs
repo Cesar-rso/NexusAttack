@@ -185,21 +185,17 @@ public class BossRusherBehaviour : MonoBehaviour {
 	}
 
 	IEnumerator BlinkingAfterHit(){
-	
-		GetComponent<SpriteRenderer> ().enabled = false;
 
-		yield return new WaitForSeconds (0.1f);
+		for (i = 0; i < 2; i++){
+			GetComponent<SpriteRenderer> ().enabled = false;
 
-		GetComponent<SpriteRenderer> ().enabled = true;
+			yield return new WaitForSeconds (0.1f);
 
-		yield return new WaitForSeconds (0.1f);
+			GetComponent<SpriteRenderer> ().enabled = true;
 
-		GetComponent<SpriteRenderer> ().enabled = false;
+			yield return new WaitForSeconds (0.1f);
+		}
 
-		yield return new WaitForSeconds (0.1f);
-
-		GetComponent<SpriteRenderer> ().enabled = true;
-	
 	}
 
 	void OnTriggerStay2D(Collider2D other){
