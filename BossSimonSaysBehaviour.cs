@@ -205,19 +205,15 @@ public class BossSimonSaysBehaviour : MonoBehaviour {
 
 	IEnumerator BlinkingAfterHit(){
 
-		GetComponent<SpriteRenderer> ().enabled = false;
+		for (i = 0; i < 2; i++){
+			GetComponent<SpriteRenderer> ().enabled = false;
 
-		yield return new WaitForSeconds (0.1f);
+			yield return new WaitForSeconds (0.1f);
 
-		GetComponent<SpriteRenderer> ().enabled = true;
+			GetComponent<SpriteRenderer> ().enabled = true;
 
-		yield return new WaitForSeconds (0.1f);
-
-		GetComponent<SpriteRenderer> ().enabled = false;
-
-		yield return new WaitForSeconds (0.1f);
-
-		GetComponent<SpriteRenderer> ().enabled = true;
+			yield return new WaitForSeconds (0.1f);
+		}
 
 	}
 
