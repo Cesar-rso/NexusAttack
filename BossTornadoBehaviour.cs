@@ -149,19 +149,15 @@ public class BossTornadoBehaviour : MonoBehaviour {
 
 	IEnumerator BlinkingAfterHit(){
 
-		GetComponent<SpriteRenderer> ().enabled = false;
+		for (i = 0; i < 2; i++){
+			GetComponent<SpriteRenderer> ().enabled = false;
 
-		yield return new WaitForSeconds (0.1f);
+			yield return new WaitForSeconds (0.1f);
 
-		GetComponent<SpriteRenderer> ().enabled = true;
+			GetComponent<SpriteRenderer> ().enabled = true;
 
-		yield return new WaitForSeconds (0.1f);
-
-		GetComponent<SpriteRenderer> ().enabled = false;
-
-		yield return new WaitForSeconds (0.1f);
-
-		GetComponent<SpriteRenderer> ().enabled = true;
+			yield return new WaitForSeconds (0.1f);
+		}
 
 	}
 
@@ -239,27 +235,15 @@ public class BossTornadoBehaviour : MonoBehaviour {
 
 	IEnumerator SlamWarning (){
 
-		GetComponent<SpriteRenderer> ().color = new Vector4(0f,255f,255f,255f);
+		for (i = 0; i <= 3; i++){
+			GetComponent<SpriteRenderer> ().color = new Vector4(0f,255f,255f,255f);
 
-		yield return new WaitForSeconds (0.2f);
+			yield return new WaitForSeconds (0.2f);
 
-		GetComponent<SpriteRenderer> ().color = new Vector4(255f,255f,255f,255f);
+			GetComponent<SpriteRenderer> ().color = new Vector4(255f,255f,255f,255f);
 
-		yield return new WaitForSeconds (0.2f);
-
-		GetComponent<SpriteRenderer> ().color = new Vector4(0f,255f,255f,255f);
-
-		yield return new WaitForSeconds (0.2f);
-
-		GetComponent<SpriteRenderer> ().color = new Vector4(255f,255f,255f,255f);
-
-		yield return new WaitForSeconds (0.2f);
-
-		GetComponent<SpriteRenderer> ().color = new Vector4(0f,255f,255f,255f);
-
-		yield return new WaitForSeconds (0.2f);
-
-		GetComponent<SpriteRenderer> ().color = new Vector4(255f,255f,255f,255f);
+			yield return new WaitForSeconds (0.2f);
+		}
 
 	}
 }
