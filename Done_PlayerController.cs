@@ -813,25 +813,18 @@ public class Done_PlayerController : MonoBehaviour
 	}
 
 	IEnumerator BlinkingAfterHit(){
+		
+		for (i = 0; i<2; i++){
+			//GetComponent<SpriteRenderer> ().enabled = false;
+			GetComponent<SpriteRenderer> ().color = new Vector4(GetComponent<SpriteRenderer> ().color.r, GetComponent<SpriteRenderer> ().color.g, GetComponent<SpriteRenderer> ().color.b, 0f);
 
-		//GetComponent<SpriteRenderer> ().enabled = false;
-		GetComponent<SpriteRenderer> ().color = new Vector4(GetComponent<SpriteRenderer> ().color.r, GetComponent<SpriteRenderer> ().color.g, GetComponent<SpriteRenderer> ().color.b, 0f);
+			yield return new WaitForSeconds (0.1f);
 
-		yield return new WaitForSeconds (0.1f);
+			//GetComponent<SpriteRenderer> ().enabled = true;
+			GetComponent<SpriteRenderer> ().color = new Vector4(GetComponent<SpriteRenderer> ().color.r, GetComponent<SpriteRenderer> ().color.g, GetComponent<SpriteRenderer> ().color.b, 1f);
 
-		//GetComponent<SpriteRenderer> ().enabled = true;
-		GetComponent<SpriteRenderer> ().color = new Vector4(GetComponent<SpriteRenderer> ().color.r, GetComponent<SpriteRenderer> ().color.g, GetComponent<SpriteRenderer> ().color.b, 1f);
-
-		yield return new WaitForSeconds (0.1f);
-
-		//GetComponent<SpriteRenderer> ().enabled = false;
-		GetComponent<SpriteRenderer> ().color = new Vector4(GetComponent<SpriteRenderer> ().color.r, GetComponent<SpriteRenderer> ().color.g, GetComponent<SpriteRenderer> ().color.b, 0f);
-
-		yield return new WaitForSeconds (0.1f);
-
-		//GetComponent<SpriteRenderer> ().enabled = true;
-		GetComponent<SpriteRenderer> ().color = new Vector4(GetComponent<SpriteRenderer> ().color.r, GetComponent<SpriteRenderer> ().color.g, GetComponent<SpriteRenderer> ().color.b, 1f);
-
+			yield return new WaitForSeconds (0.1f);
+		}
 	}
 
 	IEnumerator MachineGunSpecial(){//not being used
